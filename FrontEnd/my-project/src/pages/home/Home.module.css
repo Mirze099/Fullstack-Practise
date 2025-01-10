@@ -74,7 +74,7 @@
   color: black;
 }
 
-.cards{
+.cardss{
     margin-top: 100px;
     display: flex;
     align-items: center;
@@ -95,5 +95,31 @@
     }
     p{
         color: rgb(82, 82, 82);
+    }
+}
+
+.card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.cardInfo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    span{
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+    }
+    p{
+        color: #4f4f4f;
     }
 }

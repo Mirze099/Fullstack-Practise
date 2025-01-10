@@ -1,7 +1,26 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./Home.module.css";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  async function getData() {
+    try {
+      const res = await axios.get("http://localhost:3000/product");
+      setData(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+    console.log(data);
+  }, []);
+
   return (
     <div>
       <div className={`${styles.hero} md:py-[21rem] lg:px-56`}>
@@ -35,9 +54,7 @@ export default function Home() {
           <button>Request Free Consultancy</button>
         </div>
       </div>
-      <div
-        className={`${styles.cards} px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5`}
-      >
+      <div className={`${styles.cardss} px-12`}>
         <div className={`${styles.cardsHeader} px-12`}>
           <h1>Requirements to be Immigrants</h1>
           <p>
@@ -45,18 +62,22 @@ export default function Home() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div className={`${styles.card} px-12`}>
-          <div className={`${styles.cardImg} px-12`}>
-            <img
-              src="https://preview.colorlib.com/theme/immigration/img/s1.jpg"
-              alt=""
-            />
-          </div>
-          <div className={`${styles.cardInfo} px-12`}>
-            <span>United States</span>
-            <h1>Addiction When Gambling Becomes A Problem</h1>
-            <p>inappropriate behavior ipsum dolor sit amet, consectetur</p>
-        </div>
+        <div
+          className={`${styles.cards} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`}
+        >
+          {data &&
+            data.map((data) => (
+              <div className={`${styles.card} px-12`} key={data._id}>
+                <div className={`${styles.cardImg} px-12`}>
+                  <img src={data.image} alt="" className="w-full" />
+                </div>
+                <div className={`${styles.cardInfo} px-12`}>
+                  <span>{data.country}</span>
+                  <h1>{data.title}</h1>
+                  <p>{data.description}</p>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>

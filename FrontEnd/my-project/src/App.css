@@ -8,3 +8,26 @@
 .active{
     color: red;
 }
+
+.add-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .field {
+    width: 900px;
+    padding-inline: 0.5rem;
+    padding-block: 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  
+  .alertt {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
