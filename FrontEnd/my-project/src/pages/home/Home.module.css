@@ -1,0 +1,99 @@
+.hero {
+  background-color: #f2214c;
+  height: 85vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  img {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.heroParag {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+
+  h1 {
+    font-size: 60px;
+    font-weight: bolder;
+  }
+  button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-weight: bolder;
+  }
+}
+
+.heroWrapper {
+  background-color: #f9f9ff;
+  height: 20vh;
+}
+
+@media screen and (width: 600px) {
+  .heroP {
+    font-size: 5px;
+  }
+}
+
+.heroWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.heroWrapperLeft {
+  font-size: 25px;
+}
+
+.heroWrapperCenter {
+  font-size: 15px;
+  color: rgb(108, 108, 108);
+  width: 20%;
+}
+
+.heroWrapperRight {
+  background-color: #f2214c;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 1px solid #f2214c;
+  transition: 0.5s all ease;
+}
+
+.heroWrapperRight:hover {
+  background-color: white;
+  color: black;
+}
+
+.cards{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cardsHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    h1{
+        font-size: 40px;
+    }
+    p{
+        color: rgb(82, 82, 82);
+    }
+}

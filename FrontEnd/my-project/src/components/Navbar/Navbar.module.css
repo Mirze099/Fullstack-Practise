@@ -1,0 +1,15 @@
+.header{
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    background-color: white;
+}
+
+.headers{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar{
+    background-color: white;
+}
